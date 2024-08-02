@@ -5,6 +5,7 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
+import { ErrorInterceptor } from './_services/error.interceptor';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HomeComponent,
   ],
-  providers: [AuthService],
+  providers: [AuthService, ErrorInterceptor],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
